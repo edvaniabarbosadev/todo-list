@@ -1,5 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Grupo, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many(:tarefas).dependent(:destroy) }
+  it { should validate_presence_of(:nome) }
 end
